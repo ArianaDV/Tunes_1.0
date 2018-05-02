@@ -1,0 +1,11 @@
+.Container {
+    /* background-color: orange; */
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.spotify {
+    position: relative;
+    left: 30%;
+}
