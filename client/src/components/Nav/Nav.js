@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import "./style.css";
 
 class Nav extends Component {
   render() {
@@ -30,9 +30,6 @@ class Nav extends Component {
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item" href="#">Something else here</a>
                       </div>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link disabled" href="#">Disabled</a>
                     </li>
                   </ul>
                 </div>
