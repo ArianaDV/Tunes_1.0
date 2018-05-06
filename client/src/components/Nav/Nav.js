@@ -1,43 +1,55 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import axios from 'axios';
 
 class Nav extends Component {
-  render() {
-    return (
-      <div className="Nav">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link to="/" className="nav-brand">Party Tunes</Link>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-              
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                      <a className="nav-link" href="#">About <span className="sr-only">(current)</span></a>
-                    </li>
-                    <li className="nav-item">
-                      <Link to="/api" className="nav-link">API</Link>
-                    </li>
-                    <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Create Room
-                      </a>
-                      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="#">Action</a>
-                        <a className="dropdown-item" href="#">Another action</a>
-                        <div className="dropdown-divider"></div>
-                        <a className="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-          
-      </div>
-    );
+  constructor(props){
+    super(props);
   }
-}
+
+    logoutUser = () => {
+      axios.get('/logout')
+      .then(response => {
+        window.location.replace(response.data.redirect);
+      })
+    }
+
+    render() {
+      if (this.props.loggedIn) {
+        return ( 
+        <div className="Nav">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link to="/" className="nav-brand">Party Tunes</Link>
+          <form className="form-inline">
+            <span className="nav-item" >
+              <a className="nav-link" href="/login" id="modalBtn" onClick={this.logoutUser}>Logout</a>
+            </span>
+          </form>
+        </nav>
+        </div>);
+        }else {
+        return(
+          <div className="Nav">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link to="/" className="nav-brand">Party Tunes</Link>
+          <form className="form-inline">    
+          <Link to={"/login"} id="loginBtn">
+            <span className="nav-item" >
+              <a className="nav-link" href="/login" id="modalBtn">Login</a>
+            </span>
+          </Link>
+          <Link to={"/signup"}>
+            <span className="nav-item signUp" id="signupBtn">
+              <a className="nav-link" href="/signup" id="modalBtn">Sign Up</a>
+            </span>
+          </Link>
+          </form>
+          </nav>
+          </div>
+        );
+      }
+    }
+  }
 
 export default Nav;
