@@ -7,7 +7,7 @@ class SignUp extends Component {
   signup = (e) => {
     var userData = { email: this.refs.signupemail.value, password: this.refs.signuppassword.value };
       if (!userData.email || !userData.password) {
-        alert('Please enter email and password.')
+        // alert('Please enter email and password.')
       return;
     }
 
