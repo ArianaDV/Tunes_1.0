@@ -3,7 +3,7 @@ var bodyParser = require("body-parser")
 var PORT = process.env.PORT || 3001;
 var app = express();
 var mongoose = require("mongoose");
-var routes = require("./routes/api/apiroutes");
+var routes = require("./routes/api/api-routes");
 var session = require("express-session");
 var passport = require("./config/passport");
 
@@ -23,7 +23,6 @@ app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);
-// io.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

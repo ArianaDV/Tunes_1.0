@@ -4,10 +4,10 @@ import axios from 'axios';
 import './style.css'
 
 class SignUp extends Component {
-  signup = (evt) => {
-    let userData = { email: this.refs.signupemail.value, password: this.refs.signuppassword.value };
+  signup = (e) => {
+    var userData = { email: this.refs.signupemail.value, password: this.refs.signuppassword.value };
       if (!userData.email || !userData.password) {
-      alert('Please complete missing field(s) before submitting.')
+        alert('Please enter email and password.')
       return;
     }
 
@@ -41,6 +41,8 @@ class SignUp extends Component {
           <button className="btn btn-default" id="signup" onClick={this.signup}>
             Submit
           </button>
+          <br/>
+        <p>Or log in <a href="/login">here</a></p>
         </form>
       </div>
     );

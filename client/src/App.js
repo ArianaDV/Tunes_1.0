@@ -41,7 +41,7 @@ checkIfLoggedIn = () => {
         <Route exact path="/homepage" component={Homepage} loggedIn={this.state.loggedin}/>
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/playlist" component={Playlist} />
+        <Route exact path="/playlist" component={Playlist} loggedIn={this.state.loggedin}/>
         {/* <Route component={NoMatch} /> */}
       
         {/* <PropsRoute exact path="/" component={Homepage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />

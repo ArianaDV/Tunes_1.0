@@ -17,12 +17,11 @@ var passport = require("../../config/passport");
       password: req.body.password,
     })
       .then(function () {
-        res.send({ redirect: "/login" });
+        res.send({ redirect: '/playlist' });
       })
       .catch(function (err) {
         console.log(err);
         res.json(err);
-        // res.status(422).json(err.errors[0].message);
       });
   });
 

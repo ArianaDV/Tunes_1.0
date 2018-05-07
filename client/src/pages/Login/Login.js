@@ -4,14 +4,14 @@ import axios from 'axios';
 import './style.css'
 
 class Login extends Component {
-  login = (evt) => {
-    let userData = { email: this.refs.signinemail.value, password: this.refs.signinpassword.value };
+  login = (e) => {
+    var userData = { email: this.refs.loginemail.value, password: this.refs.signinpassword.value };
         if (!userData.email || !userData.password) {
-          alert('Please enter both Username and Password to signin.')
+          alert('Please enter email and password.')
           return;
         }
 
-    this.refs.signinemail.value = "";
+    this.refs.loginemail.value = "";
     this.refs.signinpassword.value = "";
 
     axios
@@ -21,7 +21,6 @@ class Login extends Component {
         console.log(response)
       })
       .catch(function(error) {
-        alert('Wrong Credentials provided. Please check.');
         console.log("error is" + error);
       });
   }
@@ -33,7 +32,7 @@ class Login extends Component {
         <h2 className="form-signin-heading">Login</h2>
         <div className="form-group">
           <label className="form-spacing" for="exampleInputEmail1">Email address</label><br/>
-          <input type="email" className="form-control form-spacing" id="email-input1" ref="signinemail" name="email" placeholder="Email" required />
+          <input type="email" className="form-control form-spacing" id="email-input1" ref="loginemail" name="email" placeholder="Email" required />
         </div>
         <div className="form-group">
           <label className="form-spacing" for="exampleInputPassword1">Password</label><br/>
@@ -42,6 +41,8 @@ class Login extends Component {
         <button className="btn btn-default" id="signin" onClick={this.login}>
           Login
         </button>
+        <br />
+        <p>Or sign up <a href="/signup">here</a></p>
         </form>
       </div>
     );
