@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
-import Modal from "./components/Modal/Modal";
-import Jumbo from "./components/Jumbo/Jumbo";
 import Footer from "./components/Footer/Footer";
 import Playlist from "./pages/Playlist/Playlist";
+import Wrapper from './components/Wrapper/Wrapper';
+import Home from "./pages/Home";
+import './App.css';
 
 
 class App extends Component {
@@ -12,17 +13,15 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
+      <Wrapper>
         <Nav />
-        <Modal />
-        <Jumbo />
         <Switch>
-        {/* <Route exact path="/" component={} /> */}
+        <Route exact path="/" component={Home} />
         <Route exact path="/playlist" component={Playlist} />
-        {/* <Route exact path="/login" component={Login} /> */}
-        {/* <Route component={NoMatch} /> */}
       </Switch>
       
       <Footer />
+      </Wrapper>
       </div>      
       </Router>
     );
