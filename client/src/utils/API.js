@@ -8,7 +8,6 @@ var keys = {
     secret: '3d5603460a1346f6852f8ba0e72f1716'
   };
 
-var BASEURL
 
 export default {
     getSongs: function(params){
@@ -16,11 +15,5 @@ export default {
     },
     getSavedSongs: function(){
         return axios.get("/api/songs");
-    },
-    saveUser: function(userData){
-        return axios.post("/api/users", userData);
-    },
-    getSavedUser: function(){
-        return axios.get("/api/users")
     }
 };

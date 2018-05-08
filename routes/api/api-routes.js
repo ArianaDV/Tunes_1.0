@@ -33,6 +33,30 @@ var passport = require("../../config/passport");
     }
   });
 
+  router.get('/api/songs', function(req,res) {
+    db.Song
+            .find(req.query)
+            .then(dbSong => res.json(dbSong))
+            .catch(err => res.status(422).json(err));
+  });
+
+  router.post("/api/songs", function (req, res) {
+    console.log(req.body);
+    db.Song.create({
+      _id: req.body._id,
+          title: req.body.title,
+          artist: req.body.artist
+    })
+      .then(function () {
+        res.send({ redirect: '/playlist' });
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.json(err);
+      });
+  });
+
+
   // Route for logging user out
   router.get("/logout", function (req, res) {
     req.logout();
