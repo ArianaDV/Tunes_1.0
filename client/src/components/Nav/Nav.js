@@ -18,35 +18,47 @@ class Nav extends Component {
     render() {
       if (this.props.loggedIn) {
         return ( 
-        <div className="Nav">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+          <div className="container">
+          <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+          </button>
           <Link to="/" className="nav-brand">Party Tunes</Link>
-          <form className="form-inline">
-            <span className="nav-item" >
-              <a className="nav-link" href="/login" id="modalBtn" onClick={this.logoutUser}>Logout</a>
-            </span>
-          </form>
-        </nav>
-        </div>);
+          <div className="collapse navbar-collapse" id="navbarCollapse1">    
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+            <Link to="/" className="nav-brand" id="loginBtn" onClick={this.logoutUser}>Log Out</Link>
+            </li>
+          </ul>
+          </div>
+          </div>
+          </nav>);
         }else {
         return(
-          <div className="Nav">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+          <div className="container">
+          <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+          </button>
           <Link to="/" className="nav-brand">Party Tunes</Link>
-          <form className="form-inline">    
-          <Link to={"/login"} id="loginBtn">
-            <span className="nav-item" >
-              <a className="nav-link" href="/login" id="modalBtn">Login</a>
-            </span>
-          </Link>
-          <Link to={"/signup"}>
-            <span className="nav-item signUp" id="signupBtn">
+          <div className="collapse navbar-collapse" id="navbarCollapse1">    
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+            <Link to="/login" className="nav-brand" id="loginBtn">Login</Link>
+              {/* <a className="nav-brand" href="/login">Login</a> */}
+            </li>
+          </ul>
+          
+          {/* <Link to={"/signup"}>
+          <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
               <a className="nav-link" href="/signup" id="modalBtn">Sign Up</a>
-            </span>
-          </Link>
-          </form>
-          </nav>
+            </li>
+          </ul>
+          </Link> */}
           </div>
+          </div>
+          </nav>
         );
       }
     }
