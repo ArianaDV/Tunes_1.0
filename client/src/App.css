@@ -1,0 +1,230 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.wrap {
+  /* background-image: url('Instagram.jpg'); */
+  height: 100vh;
+}
+
+/* Landing Page Styles */
+.jumbotron {
+ background: none;
+}
+
+/* TOP HEADER
+-------------------------------------------------- */
+
+.navbar a{
+  color: white;
+}
+
+/* PLAYLIST
+-------------------------------------------------- */
+
+::-webkit-input-placeholder {
+  color: #C8D2D2;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  
+  color: #C8D2D2;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  
+  color: #C8D2D2;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+:-ms-input-placeholder {
+  color: #C8D2D2;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+section {
+  margin: 50px auto 0;
+  width: 50%;
+}
+
+h1 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 5vh;
+  color: #E9E0E0;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10vh;
+  font-size: 4vh;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #B8AEAE;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+form {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  padding: 10px;
+  border-radius: 3px 0 0 3px;
+  border: 0;
+  background: #fff;
+  width: calc(100% - 72px);
+  float: left;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .3);
+  border: 1px solid #fff;
+  border-right: 0;
+  transition: border .2s ease-out;
+}
+
+input:focus {
+  border-color: #FF5050;
+  outline: 0;
+  transition: border .3s ease-in;
+}
+
+button {
+  float: left;
+  border: 0;
+  width: 50px;
+  font-size: 1.25rem;
+  background: #FF5050;
+  border: 1px solid #FF5050;
+  border-left: 0;
+  height: 46px;
+  display: block;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .25);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .3);
+  transition: background .2s ease-out;
+}
+
+button:hover {
+  background: #E71D32;
+  transition: background .3s ease-in;
+  border-color: #E71D32;
+}
+
+.tags {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tags li {
+  background: #FF5050;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .25);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .3);
+  border: 1px solid #FF5050;
+  cursor: pointer;
+  transition: background .2s ease-out;
+  margin: 5px;
+}
+
+.tags li:hover {
+  background: #E71D32;
+  transition: background .3s ease-in;
+  border-color: #E71D32;
+}
+
+.tags li i {
+  margin-left: 5px;
+}
+
+.suggestions {
+  background: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  padding: 10px;
+  display: none;
+  width: calc(100% - 20px);
+  margin: 0;
+  list-style-type: none;
+}
+
+.suggestions li {
+  padding: 10px;
+  border-bottom: 1px solid #DFE9E9;
+  cursor: pointer;
+  transition: background .2s ease-out, text-shadow .2s ease-out, color .2s ease-out;
+}
+
+.suggestions li:not(.title):hover {
+  background: #FF5050;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, .25);
+  transition: background .3s ease-in, text-shadow .3s ease-in, color .3s ease-in;
+}
+
+.suggestions li:first-of-type {
+  padding-top: 10px !important;
+}
+
+.suggestions li:last-of-type {
+  border-bottom: 0;
+}
+
+.suggestions li.title {
+  color: #AEB8B8;
+  font-style: italic;
+  padding-top: 30px;
+}
+
+.suggestions.active {
+  display: block;
+}

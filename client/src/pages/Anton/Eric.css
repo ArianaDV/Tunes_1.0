@@ -1,0 +1,8 @@
+html, body{
+  background-color: gray;
+}
+
+body{
+  padding: 10px;
+   background-image: url("./cassette.gif");
+}
