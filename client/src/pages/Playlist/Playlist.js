@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class Playlist extends Component {
 
     render(){
@@ -20,7 +21,7 @@ class Playlist extends Component {
                </div>
            </div>
            <div className="col-sm-12 col-md-6 col-lg-6 mt-4">
-               <Panel />
+               {/* <Panel /> */}
            </div>
             </div>  
    
