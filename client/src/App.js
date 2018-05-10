@@ -3,12 +3,14 @@ import {BrowserRouter as Router, Route, Link, Redirect, withRouter, Switch } fro
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import Playlist from "./pages/Playlist/Playlist";
+
 import SignUp from "./pages/SignUp/SignUp";
 import Home from './pages/Home/Home';
 import Wrapper from './components/Wrapper/Wrapper';
 import axios from "axios";
 import Login from "./pages/Login/Login";
 import './App.css';
+
 
 class App extends Component {
   state = {
@@ -36,6 +38,7 @@ checkIfLoggedIn = (res) => {
       <Router>
       <div className="App">
       <Wrapper>
+
         <Nav loggedIn={this.state.loggedin}/>
         <Switch>
         <Route exact path="/" component={Home}/>

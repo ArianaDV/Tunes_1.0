@@ -4,6 +4,7 @@ import "./style.css";
 import axios from 'axios';
 
 class Nav extends Component {
+
   constructor(props){
     super(props);
   }
@@ -62,6 +63,7 @@ class Nav extends Component {
         );
       }
     }
+
   }
 
 export default Nav;
