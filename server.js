@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var routes = require("./routes/api/api-routes");
 var session = require("express-session");
 var passport = require("./config/passport");
-
+var path = require('path');
 
 var db = require("./models");
 // Configure body parser for AJAX requests
