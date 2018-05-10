@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router, Route, Link, Redirect, withRouter, Switch } from 'react-router-dom';
 import Nav from "./components/Nav/Nav";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/";
 import Playlist from "./pages/Playlist/Playlist";
 
 import SignUp from "./pages/SignUp/SignUp";
@@ -47,7 +47,7 @@ checkIfLoggedIn = (res) => {
         <Route exact path="/playlist" component={Playlist} loggedIn={this.state.loggedin}/>
         {/* <Route component={NoMatch} /> */}
         </Switch>
-      {/* <Footer /> */}
+      <Footer />
       </Wrapper>
       </div>      
       </Router>
