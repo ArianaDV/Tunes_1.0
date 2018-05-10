@@ -23,7 +23,6 @@
   to { transform: rotate(360deg); }
 }
 
-
 .wrap {
   background-image: url('Instagram.jpg');
   height: 100vh;
@@ -38,7 +37,9 @@
 -------------------------------------------------- */
 
 .navbar a{
+
   color: white;
+
 }
 
 /* PLAYLIST
@@ -226,6 +227,7 @@ button:hover {
 
 .suggestions.active {
   display: block;
+
 }
 
 /* FOOTER */
@@ -274,4 +276,5 @@ button:hover {
   margin: 0;
   opacity: 1;
   transition: 0s
+
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Form from "../../components/Form/Form";
+import Search from "../../components/Search/Search";
 import Song from "../../components/Song/Song";
 import "./style.css";
 
@@ -12,7 +12,7 @@ class Panel extends Component {
     render(){
         return(
             <div className="Panel">
-                <Form />
+                <Search />
                 <Song />                
             </div>
         );

@@ -1,22 +1,20 @@
-const express = require("express");
+var express = require("express");
 var bodyParser = require("body-parser")
-const PORT = process.env.PORT || 3001;
-const app = express();
+var PORT = process.env.PORT || 3001;
+var app = express();
 var mongoose = require("mongoose");
-const routes = require("./routes");
+var routes = require("./routes/api/api-routes");
 var session = require("express-session");
 var passport = require("./config/passport");
 
-const socketIO = require('socket.io');
-const http = require('http');
+
 var db = require("./models");
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
-console.log('change')
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if(process.env.NODE_ENV==='production'){
+  app.use(express.static(path.join(__dirname , 'client/build')));
 }
 
 app.use(session({secret: "keyboard cat", resave: true, saveUninitialized: true}));
@@ -25,7 +23,6 @@ app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);
-// io.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -36,6 +33,7 @@ mongoose.connect(
     useMongoClient: true
   }
 );
+
 
 // Start the API server
 app.listen(PORT, () =>

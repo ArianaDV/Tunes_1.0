@@ -1,5 +1,5 @@
 import axios from "axios";
-// import filterParams from "./filterParams";
+
 
 export default {
     getSongs: function(params){
@@ -7,5 +7,8 @@ export default {
     },
     getSavedSongs: function(){
         return axios.get("/api/songs");
+    },
+    search: function(){
+        return axios.get("/api/spotify")
     }
 };

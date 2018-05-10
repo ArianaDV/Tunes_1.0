@@ -11,42 +11,17 @@ const userSchema = new Schema({
   password: {type:String, required: true}
 });
 
-/**
- * Compare the passed password with the value in the database. A model method.
- *
- * @param {string} password
- * @returns {object} callback
- */
-userSchema.methods.comparePassword = function comparePassword(password, callback) {
-  bcrypt.compare(password, this.password, callback);
-};
-
-
-/**
- * The pre-save hook method.
- */
-userSchema.pre('save', function saveHook(next) {
-  const user = this;
-
-  // proceed further only if the password is modified or the user is new
-  if (!user.isModified('password')) return next();
-
-
-  return bcrypt.genSalt((saltError, salt) => {
-    if (saltError) { return next(saltError); }
-
-    return bcrypt.hash(user.password, salt, (hashError, hash) => {
-      if (hashError) { return next(hashError); }
-
-      // replace a password string with hash value
-      user.password = hash;
-
-      return next();
-    });
-  });
+userSchema.pre("save", function(next) {
+  let user = this;
+  user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  next();
 });
 
-const User = mongoose.model("User", userSchema);
-  
+// function to validate password
+userSchema.methods.validPassword = function(password) {
+  const result = bcrypt.compareSync(password, this.password);
+  return result;
+};
 
-module.exports = User;
+// exporting the User model
+module.exports = mongoose.model('User' , userSchema);

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class Playlist extends Component {
 
     render(){
@@ -21,21 +20,13 @@ class Playlist extends Component {
                </div>
            </div>
            <div className="col-sm-12 col-md-6 col-lg-6 mt-4">
-               <div className="card">
-                   <h1>
-                    <ol>
-                     <li>Wake me up</li>
-                     <li>Lean on</li>
-                     <li>Feel good</li>
-                     </ol>
-                   </h1>
-               </div>
+               <Panel />
            </div>
             </div>  
    
             </div>
+
         );
     }
-
 }
 export default Playlist;
