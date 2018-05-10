@@ -6,13 +6,17 @@ class Home extends Component {
 
     render(){
         return(
-            <div className="jumbotron jumbotron-fluid">
+        <div className="jumbotron jumbotron-fluid">
             <main role="main" className="inner cover">
-        <h1 className="cover-heading">Define your party</h1>
-        <p className="lead">
-        <Link to={'/playlist'}>Begin here</Link>        </p>
-      </main>
-            </div>
+              <h1 className="cover-heading">Define your party</h1>
+              <Link to={'/playlist'}>
+              <button className="nav-button">Begin here</button>
+              </Link>
+              
+        
+           </main>
+
+        </div>
         );
     }
 
