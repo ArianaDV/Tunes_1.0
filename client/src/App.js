@@ -17,13 +17,19 @@ class App extends Component {
 
 componentWillMount() {
   this.checkIfLoggedIn();
+  console.log(this.state);
 }
 
-checkIfLoggedIn = () => {
+checkIfLoggedIn = (res) => {
+  if (this.state === false){
+      res.redirect("/home");
+    }
+
   axios.get('/current_user')
     .then(response => {
       this.setState({loggedin: response.data.logged_in})
     });
+
 }  
   render() {
     return (
@@ -38,7 +44,7 @@ checkIfLoggedIn = () => {
         <Route exact path="/playlist" component={Playlist} loggedIn={this.state.loggedin}/>
         {/* <Route component={NoMatch} /> */}
         </Switch>
-      <Footer />
+      {/* <Footer /> */}
       </Wrapper>
       </div>      
       </Router>

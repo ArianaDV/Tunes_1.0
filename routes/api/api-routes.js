@@ -56,6 +56,21 @@ var passport = require("../../config/passport");
       });
   });
 
+  router.get("/api/spotify", function(){
+    return spotify.search({ type: 'track', query: songSearch, limit: 1}, function (err, data){
+      if (err) {
+      //if songSearch = "", make songSearch = "The Sign"
+      return console.log('Error occurred: ' + err);
+        }
+        else{
+        console.log(data.tracks.items[0].artists[0].name);
+      console.log(data.tracks.items[0].name);
+      console.log(data.tracks.items[0].album.external_urls.spotify);
+      console.log(data.tracks.items[0].album.name);
+      console.log(data.tracks.items[0].album.images[0]);
+  }
+});
+  })
 
   // Route for logging user out
   router.get("/logout", function (req, res) {

@@ -1,0 +1,9 @@
+.results{
+    border-style: groove;
+    width: 100;
+}
+
+.list-group{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import './style.css'
 
 class Song extends Component {
 
@@ -10,13 +10,23 @@ class Song extends Component {
   // }
 
   state = {
-    songs: []
+    songs: [],
+    likes: 1
   };
 
   componentDidMount(){
     console.log(this);
     this.getSavedSongs();
   }
+
+  likeCounter = (e) => {
+    // e.preventDefault();
+    this.setState({
+      likes: this.state.likes + 1
+  });
+  console.log("liked!");
+  {console.log(this.state.likes)}
+}
 
   getSavedSongs = () => {
     API.getSavedSongs()
@@ -30,30 +40,28 @@ class Song extends Component {
 };
 
   render(){
-    return(<div>
-      Test
-      <div className="panel">
-          {this.state.songs.length ? (
-            <div>
-                  {this.state.songs.map(song => (
-                      // console.log(song.title  
-                      
-                        <ul className="list">
-                          
-                          {/* key={song.title} */}
-                          Title: {song.title} 
-                        
-                          Artist: {song.artist}
-                          </ul>
-                      
-                  ))}
-              </div>
-          ): ''}
+    return(
+    <div>
+      <div className="results">
+        <th><h3>Music Choices</h3></th>
+        {this.state.songs.length ? (
+          <div className="form-group">
+            {this.state.songs.map(song => (
+                // console.log(song.title)  
+                <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                {/* key={song.title} */}
+                <img/>
+                {song.title}
+                <br/>
+                by: {song.artist}
+                  <button class="badge badge-primary badge-pill" onClick={this.likeCounter}><i class="fas fa-thumbs-up"></i></button>
+                </li>
+              </ul>
+            ))}
+        </div>
+      ): ''}
       </div>
-      
-
-
-
     </div>)
   }
 
