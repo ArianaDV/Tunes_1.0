@@ -1,4 +1,4 @@
 module.exports = {
-  Song: require("./song.js"),
-  User: require("./user.js")
+  Song: require("./Song"),
+  Room: require("./Room")
 };

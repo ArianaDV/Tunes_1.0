@@ -6,6 +6,9 @@ var mongoose = require("mongoose");
 const routes = require("./routes");
 var session = require("express-session");
 var passport = require("./config/passport");
+var logger = require("morgan");
+
+app.use(logger("dev"));
 
 const socketIO = require('socket.io');
 const http = require('http');
@@ -36,6 +39,64 @@ mongoose.connect(
     useMongoClient: true
   }
 );
+
+db.Room.create({ name: "Party Room" })
+  .then( dbRoom => {
+    console.log(dbRoom);
+  })
+  .catch(err => {
+    console.log(err.message);
+  });
+
+  //Route for posting songs to database
+  app.post("/submit", (req, res) => {
+    db.Song.create(req.body)
+      .then(dbSong => {
+        return db.Room.findOneAndUpdate({}, { $push: { songs: dbSong._id } }, { new: true });
+      })
+      .then( dbRoom => {
+        res.json(dbRoom);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
+  //Route for getting all songs
+  app.get("/allSongs", (req, res) => {
+    db.Song.find({})
+      .then(dbSong => {
+        res.json(dbSong);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
+  //Route for getting all rooms
+  app.get("/rooms", (req, res) => {
+    db.Room.find({})
+      .then( dbRoom => {
+        res.json(dbRoom);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
+  //Route to see what the Rooms look like populated
+  app.get("/populated", (req, res) => {
+    db.Room.find({})
+      .populate("songs")
+      .then(dbRoom => {
+        res.json(dbRoom);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
+
 
 // Start the API server
 app.listen(PORT, () =>

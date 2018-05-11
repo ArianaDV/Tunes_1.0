@@ -22,10 +22,10 @@ class Eric extends Component {
     }
 
     onSubmit = field => {
-        console.log('Eric comp got: ', field.songSearch);
-        let accessToken = 'BQDhEWUYpJHjdGLOUDN3NpgQTQlz29j5MtBrIOjheCThQUODC-wBF0QcaN2yr1tGMQGm4VpBBtKJKJSUmAaaO9emjw5_sA-TvxC9B374PZTpnAeEdxmnawKlRB1ziibbQjfwLw7VEL0VreQ2fWuPjwjyjgRYLs-mGl2fHV9xh6tmcI_BSwbwB1SP0hlBeBMDESokqhGSDZdBQEM-WeBmXrO9bc8m3GY';
+        //console.log('Eric comp got: ', field.songSearch);
+        let accessToken = 'BQAjVeXczkNv6NE7ImKLHmL9jr7uWg3G7NBXj7OghMWjU9YxdKZy8fyDm-u-fbrZVX4eo2FVYkWWm6tJ-5e8PHMNTVQODD4DPFZqGgmKD53FczlOTApz5dkSamVJetTX7sKfkyWgFKkkoYskWLrnJbpjfJFwEEj-i0O-mfeJLO23CA_5Yiq7VXmC7hqW-mhOG4DfHJjDIdq1gfFzz7Xtk39Cahb5B-k#_=_';
         this.setState({ field });
-        console.log(this.state);
+        //console.log(this.state);
 
             fetch('https://api.spotify.com/v1/search?q=' + field.songSearch + '&type=track', {
                 headers: { 'Authorization': 'Bearer ' + accessToken }
@@ -36,8 +36,13 @@ class Eric extends Component {
                     let songImage = songData.album.images[0].url;
                     let songArtist = songData.artists[0].name;
                     let songID = songData.id;
+                    console.log('Title: ', songData.name)
+                    console.log('Artist: ', songArtist)
                     console.log('song URL ',songUrl)
                     console.log('songImage ', songImage)
+                    console.log('------------------------------------------------------------------------')
+
+                    
                 })
     };
     
@@ -151,16 +156,16 @@ class Eric extends Component {
                         <PlaylistCounter playlists={playlistToRender} />
                         <HoursCounter playlists={playlistToRender} />
                         <Filter onSubmit={field => this.onSubmit(field) }/>
-                        {playlistToRender.map((playlist, i) =>
+                        {/* {playlistToRender.map((playlist, i) =>
                             <Playlist playlist={playlist} index={i} />
-                        )}
+                        )} */}
                     </div> : <button onClick={() => {
                         true// window.location= window.location.href.includes('localhost')''
                             ? window.location.replace("https://murmuring-shore-84467.herokuapp.com/login")  // 'http://localhost:8888/login'
                             : 'error'
                     }
                     }
-                        style={{ padding: "20px", 'font-size': '50px', 'margin-top': '20px' }}>Sign in with Spotify</button>
+                        >Sign in with Spotify</button>
                 }
             </div>
         );
