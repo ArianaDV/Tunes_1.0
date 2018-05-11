@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css'
 
 class Filter extends Component {
     state = {
@@ -25,7 +26,7 @@ class Filter extends Component {
                         onChange={e => this.setState({ songSearch: e.target.value })} 
                     />
                     {/* <input type="submit"/> */}
-                    <button onClick={(e) => this.onSubmit(e)}> Submit </button>
+                    <button class='.btn' onClick={(e) => this.onSubmit(e)}> Submit </button>
                 </form>
             </div>
         );
