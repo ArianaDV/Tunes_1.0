@@ -31,7 +31,7 @@ class Playlist extends Component {
         }).then(response => response.json())
             .then(data => {
                 let songData = data.tracks.items[0];
-                let songUrl = data.tracks.items[0].external_urls;
+                let songUrl = data.tracks.items[0].external_urls.spotify;
                 let songImage = songData.album.images[0].url;
                 let songArtist = songData.artists[0].name;
                 let songID = songData.id;
@@ -46,11 +46,11 @@ class Playlist extends Component {
                         title: songData.name,
                         artist: songArtist,
                         url: songUrl,
-                        image: songImage,
-                        likes: 0
+                        image: songImage
                     })
                     .then(response => {
                         console.log('it worked');
+                        console.log(response.data)
                     })
                     .catch(error => {
                         console.log("error is: ", error);
