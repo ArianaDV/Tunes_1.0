@@ -10,21 +10,6 @@ var passport = require("../../config/passport");
     res.send({ redirect: '/playlist' });
   });
 
-  // router.post("/api/signup", function (req, res) {
-  //   console.log(req.body);
-  //   db.User.create({
-  //     email: req.body.email,
-  //     password: req.body.password,
-  //   })
-  //     .then(function () {
-  //       res.send({ redirect: '/playlist' });
-  //     })
-  //     .catch(function (err) {
-  //       console.log(err);
-  //       res.json(err);
-  //     });
-  // });
-
   router.get('/api/songs', function(req,res) {
     db.Song
             .find(req.query)
@@ -50,8 +35,6 @@ var passport = require("../../config/passport");
         res.json(err);
       });
   });
-
-
 
 
 module.exports = router;
