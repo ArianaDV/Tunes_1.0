@@ -4,31 +4,35 @@ import axios from 'axios';
 import './style.css'
 
 class Login extends Component {
-  login = (e) => {
-    var userData = { email: this.refs.loginemail.value, password: this.refs.signinpassword.value };
-        if (!userData.email || !userData.password) {
-          alert('Please enter email and password.')
-          return;
-        }
+  // login = (e) => {
+  //   var userData = { email: this.refs.loginemail.value, password: this.refs.signinpassword.value };
+  //       if (!userData.email || !userData.password) {
+  //         alert('Please enter email and password.')
+  //         return;
+  //       }
 
-    this.refs.loginemail.value = "";
-    this.refs.signinpassword.value = "";
+  //   this.refs.loginemail.value = "";
+  //   this.refs.signinpassword.value = "";
 
-    axios
-      .post("/api/login", { email: userData.email, password: userData.password })
-      .then(function(response) {
-        window.location.replace(response.data.redirect);
-        console.log(response)
-      })
-      .catch(function(error) {
-        console.log("error is" + error);
-      });
-  }
+  //   axios
+  //     .post("/api/login", { email: userData.email, password: userData.password })
+  //     .then(function(response) {
+  //       window.location.replace(response.data.redirect);
+  //       console.log(response)
+  //     })
+  //     .catch(function(error) {
+  //       console.log("error is" + error);
+  //     });
+
+
+
+  
 
   render(){
     return (
-      <div className="form-signin" name="signin" id="signupForm-sidebar">      
-        <form className="login">
+      <div>
+        {/* <div> className="form-signin" name="signin" id="signupForm-sidebar">       */}
+        {/* <form className="login">
         <h2 className="form-signin-heading">Login</h2>
         <div className="form-group">
           <label className="form-spacing" for="exampleInputEmail1">Email address</label><br/>
@@ -43,7 +47,17 @@ class Login extends Component {
         </button>
         <br />
         <p>Or sign up <a href="/signup">here</a></p>
-        </form>
+        </form> */}
+
+        <button class='btn' onClick={() => {
+          true// window.location= window.location.href.includes('localhost')''
+            ? window.location.replace("https://murmuring-shore-84467.herokuapp.com/login")  // 'http://localhost:8888/login'
+            : 'error'
+        }
+        }
+        >Sign in with Spotify</button>
+
+
       </div>
     );
   }
