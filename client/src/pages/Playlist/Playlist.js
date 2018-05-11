@@ -41,6 +41,20 @@ class Playlist extends Component {
                 console.log('songImage ', songImage)
                 console.log('------------------------------------------------------------------------')
 
+                axios
+                    .post("/api/songs", {
+                        title: songData.name,
+                        artist: songArtist,
+                        url: songUrl,
+                        image: songImage,
+                        likes: 0
+                    })
+                    .then(response => {
+                        console.log('it worked');
+                    })
+                    .catch(error => {
+                        console.log("error is: ", error);
+                    });
 
             })
     }
