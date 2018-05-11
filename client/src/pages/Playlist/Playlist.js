@@ -3,6 +3,7 @@ import queryString from 'query-string';
 import Filter from "../../components/Filter/Filter";
 import axios from 'axios';
 import './style.css'
+import SongWell from "../../components/songWell/songWell";
 
 
 class Playlist extends Component {
@@ -93,6 +94,7 @@ class Playlist extends Component {
                         <div className="card">
                             <h1>Spotify API goes here</h1>
                             <Filter onSubmit={field => this.onSubmit(field)} />
+                            <SongWell/>
                         </div>
                     </div>
             
