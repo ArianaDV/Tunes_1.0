@@ -109,6 +109,19 @@ body {
 .fa {
   font-size: 1.5em;
 }
+
+/* CARD */
+
+.card {
+  width: 100%;
+  float: right;
+  background-color: transparent;
+  border: 0;
+  color: whitesmoke;
+
+}
+
+
 /* PLAYLIST
 -------------------------------------------------- */
 
