@@ -19,7 +19,6 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/playlist" component={Playlist} />
       </Switch>
-      
       <Footer />
       </Wrapper>
       </div>      

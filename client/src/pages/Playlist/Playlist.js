@@ -6,12 +6,12 @@ class Playlist extends Component {
     render(){
         return(
             <div className="container">
-            <h1>Find your jam...</h1>
+            <h1>Find your beat...</h1>
             <form method="get" action="?">
             <input type="text" placeholder="Search" />
-            <ul class="suggestions"></ul>
+            <ul className="suggestions"></ul>
             <button type="submit">
-            <i class="fa fa-search"></i>
+            <i className="fa fa-search"></i>
             </button>
             </form>
             <div className="row">
