@@ -40,7 +40,8 @@ var passport = require("../../config/passport");
       artist: req.body.artist,
       url: req.body.url,
       image: req.body.image,
-      likes: req.body.likes
+      likes: req.body.likes,
+      songID: req.body.songID
     })
       .then(function () {
         res.send({ redirect: '/playlist' });
