@@ -1,4 +1,4 @@
-.btn {
+/* .btn {
 width: 250px;
 position:relative;
 color: black;
@@ -12,9 +12,9 @@ button:hover {
   background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
   background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
   text-decoration: none;
-}
+} */
 
-input{
+/* input{
    width: calc(100% - 130px);
    float: left;
-}
+}  */

@@ -21,29 +21,28 @@ class SongWell extends Component {
         'padding-right': '400px;'
     }
 
-    let wrap = {
-        'box-sizing': 'border-box;',
-        'width': '960px;',
-        'height': '2000px;',
-        'padding': '30px;',
-        'border': '2px solid black;',
+    // let wrap = {
+    //     'box-sizing': 'border-box;',
+    //     'width': '960px;',
+    //     'height': '2000px;',
+    //     'padding': '30px;',
+    //     'border': '2px solid blacl;',
                 
-        'background-color': '#CBE6A5;',
-        'background - image': '-webkit - linear - gradient(top, #CBE6A5, #E2F1CD);',
-        'background - image': '-moz - linear - gradient(top, #CBE6A5, #E2F1CD);',
-        'background - image': 'linear - gradient(top, #CBE6A5, #E2F1CD);',
-        'overflow': 'auto;'
+    //     'background-color': '#CBE6A5;',
+    //     'background - image': '-webkit - linear - gradient(top, #CBE6A5, #E2F1CD);',
+    //     'background - image': '-moz - linear - gradient(top, #CBE6A5, #E2F1CD);',
+    //     'background - image': 'linear - gradient(top, #CBE6A5, #E2F1CD);',
+    //     'overflow': 'auto;'
 
-    }
+    // }
         let E = this.props.songProp;
 
     console.log(this.props.songProp);
 
         return (
-            <div>
+            <div className="box">
             
-                <wrapper className='w3-container w3-teal' style={wrap}>
-
+                <wrapper className='w3-container w3-teal'>
                         <img src= {E.image}
                             style={{
                                 width: '130px',
@@ -51,15 +50,12 @@ class SongWell extends Component {
                             }}
                         />
                         
-                        <h3 style ={textFont}>
+                        <h4 style ={textFont}>
                             Artist: {E.artist}
-                        </h3>
-                        <h3 style={textFont}>
+                        </h4>
+                        <h4 style={textFont}>
                             Song: {E.title}
-                        </h3>
-
-                        
-
+                        </h4>
                 </wrapper> 
             </div>
         );

@@ -177,37 +177,16 @@ class Playlist extends Component {
 
             <div>
             <h3>Find your favorite song...</h3>
-            <div className="row">
-            <div className="col-md-8" id="search-field">
-            <form method="post">
-              <input type="text" className="textbox" placeholder="Search..."/>
-              <input title="Search" value="" type="submit" className="button"/>
-            </form>
-            </div>
-            </div>
-
-            <div className="container">
-                <h1>Find your jam...</h1>
-                <div className="row">
-                    <div className="col-sm-12 col-md-12 col-lg-12 mt-4">
-                        <div className="card">
-                            <h1>Spotify API goes here</h1>
-                            <Filter onSubmit={field => this.onSubmitEE(field)} />
-                            
-                           {
-                               songToRender.map((info, i) => 
-                                    <SongWell songProp={info} index={i}/>)
-                           }
-                            
-                            
-                            
-                        </div>
-                    </div>
             
-                </div>  
-   
-
+               <form method="post">
+            <Filter onSubmit={field => this.onSubmitEE(field)} />
+              {
+                songToRender.map((info, i) => 
+                <SongWell songProp={info} index={i}/>)
+             }
+              </form>
             </div>
+
         );
     }
 }
