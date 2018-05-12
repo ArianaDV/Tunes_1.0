@@ -174,6 +174,18 @@ class Playlist extends Component {
         // console.log(axioMap) 
           
         return(
+
+            <div>
+            <h3>Find your favorite song...</h3>
+            <div className="row">
+            <div className="col-md-8" id="search-field">
+            <form method="post">
+              <input type="text" className="textbox" placeholder="Search..."/>
+              <input title="Search" value="" type="submit" className="button"/>
+            </form>
+            </div>
+            </div>
+
             <div className="container">
                 <h1>Find your jam...</h1>
                 <div className="row">
@@ -194,9 +206,10 @@ class Playlist extends Component {
             
                 </div>  
    
-            </div>
 
+            </div>
         );
     }
 }
+
 export default Playlist;
