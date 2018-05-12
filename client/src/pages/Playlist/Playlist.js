@@ -3,6 +3,7 @@ import queryString from 'query-string';
 import Filter from "../../components/Filter/Filter";
 import axios from 'axios';
 import './style.css'
+import Song from "../../components/Song/Song";
 import SongWell from "../../components/songWell/songWell";
 
 
@@ -88,6 +89,20 @@ class Playlist extends Component {
     }
 
     render(){
+
+        // axios
+        //     .get("/api/songs/")
+        //     .then(response => {
+        //         console.log(response.data);
+        //         let api = response.data;
+                
+        //         })
+
+        //     })
+        //     .catch(error => {
+        //         console.log("error is ", error);
+        //     });
+
         return(
             <div className="container">
                 <h1>Find your jam...</h1>
@@ -96,7 +111,7 @@ class Playlist extends Component {
                         <div className="card">
                             <h1>Spotify API goes here</h1>
                             <Filter onSubmit={field => this.onSubmit(field)} />
-                            <SongWell/>
+                            {/* <Song/> */}
                         </div>
                     </div>
             

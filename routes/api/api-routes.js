@@ -28,7 +28,9 @@ var passport = require("../../config/passport");
       likes: req.body.likes
     })
       .then(function () {
-        res.send({ redirect: '/playlist' });
+        //res.send({ redirect: '/playlist' });
+        res.send({});
+        console.log('im here')
       })
       .catch(function (err) {
         console.log(err);

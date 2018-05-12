@@ -1,46 +1,36 @@
 import React, { Component } from "react";
 import './style.css'
 import axios from 'axios';
+import API from "../../utils/API";
 
 class SongWell extends Component {
-    
+   
     state = {
-        title: '',
-        artist: '',
-        url: '',
-        image: '',
-        likes: ''
-    } 
+        songs: [],
+        likes: 1
+    };
 
-    hellp = () =>{
-        sadflk 
-        sdalfj
+    componentDidMount() {
+        console.log(this);
+        this.getSavedSongs();
     }
 
+    getSavedSongs = () => {
+        API.getSavedSongs()
+            .then(res =>
+                this.setState({
+                    songs: res.data
+                })
+            )
+            // .then(console.log(API.getSavedSongs()))
+            .catch(err => console.log(err));
+    };
 
     render() {
-
-        axios
-            .get("/api/songs/")
-            .then(response => {
-                console.log(response.data);
-                let api = response.data;
-                this.setState({
-                    title: '',
-                    artist: '',
-                    url: '',
-                    image: '',
-                    likes: ''
-                })
-                
-            })
-            .catch(error => {
-                console.log("error is ", error);
-            });
-
         return (
             <div>
-                Hello
+                help
+                {console.log(this.state.songs)}
             </div>
         );
     }

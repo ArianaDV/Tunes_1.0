@@ -13,7 +13,7 @@ class Panel extends Component {
         return(
             <div className="Panel">
                 <Search />
-                <Song />                
+                {/* <Song />                 */}
             </div>
         );
     }
