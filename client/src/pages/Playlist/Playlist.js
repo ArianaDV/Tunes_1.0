@@ -92,7 +92,7 @@ class Playlist extends Component {
             <div className="row">
             <div className="col-md-8" id="search-field">
             <form method="post">
-              <input type="text" className="textbox" placeholder="Search"/>
+              <input type="text" className="textbox" placeholder="Search..."/>
               <input title="Search" value="" type="submit" className="button"/>
             </form>
             </div>
