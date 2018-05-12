@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './style.css'
 import axios from 'axios';
+import Like from "../../components/Like/Like";
 
 
 class SongWell extends Component {
@@ -36,6 +37,7 @@ class SongWell extends Component {
 
     // }
         let E = this.props.songProp;
+        let i = 0;
 
     console.log(this.props.songProp);
 
@@ -55,7 +57,16 @@ class SongWell extends Component {
                         </h4>
                         <h4 style={textFont}>
                             Song: {E.title}
+
                         </h4>
+
+                        <Like likeCount={i} onClick={i++}/>
+                            
+                        
+
+
+                        
+
                 </wrapper> 
             </div>
         );

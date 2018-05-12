@@ -138,40 +138,41 @@ class Playlist extends Component {
                     songID: songID
                 })
                 console.log(this.state.songID)
-            })
+            }).then(songID => {
+                fetch('https://api.spotify.com/v1/users/' + '12129895622' + '/playlists',{
+                    headers: { 'Authorization' : 'Bearer ' + accessToken },
+                    method: 'post',
+                    body: 
+                        JSON.stringify({
+                        "name": "Party Room Playlist",
+                        "description": "New playlist description",
+                        "public": false}) 
+                }).then(response => {
+                    return response.json();
+                    response.send({ redirect: 'https://open.spotify.com/collection/playlists' });
+                }).then(data => {
+                    console.log(data);
+                    console.log('SUCCESSFUL');
+                });
+            });
         //----------------------------------------------------------------
+
 
     }
 
     render(){
         let song = '';
+        let newOrder = '';
+
         let songToRender =
             this.state.axioData 
             ? song = this.state.axioData
             : []
-        // let currentSongInfo = {
-        //     title: this.state.title,
-        //     artist: this.state.artist,
-        //     url: this.state.url,
-        //     image: this.state.image,
-        //     likes: this.state.likes,
-        //     order: this.state.order,
-        //     songID: this.state.songID,
-        //     allData: 
-        // };
-
-        // let axioToRender = this.state.axioData;
-        // let axioMap = axioToRender.map((data) => {
-        //     let currentSongInfo = {
-        //         title: this.state.title,
-        //         artist: this.state.artist,
-        //         url: this.state.url,
-        //         image: this.state.image
-        //     }
-
-            
-        // });
-        // console.log(axioMap) 
+        
+        let reOrder =
+            this.state.axioData
+            ? newOrder = this.state.axioData
+            : []
           
         return(
 
