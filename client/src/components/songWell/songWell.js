@@ -42,7 +42,7 @@ class SongWell extends Component {
     console.log(this.props.songProp);
 
         return (
-            <div className="box">
+            <div className="box" >
             
                 <wrapper className='w3-container w3-teal'>
                         <img src= {E.image}
