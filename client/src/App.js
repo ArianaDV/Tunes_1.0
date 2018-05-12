@@ -19,7 +19,7 @@ class App extends Component {
 
 componentWillMount() {
   this.checkIfLoggedIn();
-  console.log(this.state);
+  
 }
 
 checkIfLoggedIn = (res) => {
