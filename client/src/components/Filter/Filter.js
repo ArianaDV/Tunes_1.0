@@ -12,7 +12,8 @@ class Filter extends Component {
         this.setState({
             songSearch:''
         })
-        //console.log(this.state);
+        console.log(this.state);
+        console.log(this.props);
     };      
     
 
@@ -26,7 +27,7 @@ class Filter extends Component {
                         onChange={e => this.setState({ songSearch: e.target.value })} 
                     />
                     {/* <input type="submit"/> */}
-                    <button onClick={(e) => this.onSubmit(e)}> Submit </button>
+                    <button onClick={(e) => this.onSubmit(e)} > Submit </button>
                 </form>
             </div>
         );

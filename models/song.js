@@ -6,7 +6,9 @@ const songSchema = new Schema({
   artist: { type: String, required: true },
   url: { type: Object},
   image: { type: String},
-  likes: { type: Number}
+  likes: { type: Number},
+  order: { type: Number},
+  songID: { type: String}
 });
 
 const Song = mongoose.model("Song", songSchema);
