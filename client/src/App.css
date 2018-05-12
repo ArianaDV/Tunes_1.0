@@ -301,10 +301,10 @@ button:hover {
 
 form {
   outline: 0;
-  float: left;
+  /* float: left; */
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  padding-left: 60%;
+  padding-left: 30%;
   border:0;
 }
 
